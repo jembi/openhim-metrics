@@ -1,0 +1,27 @@
+# Jembi customized script; original by kvz - http://kevin.vanzonneveld.net
+
+description "Drug Stock Warehouse Node.js Server"
+author      "(original by) kvz - http://kevin.vanzonneveld.net"
+
+# used to be: start on startup
+# until we found some mounts weren't ready yet while booting:
+start on started mountall
+stop on shutdown
+
+# Automatically Respawn:
+respawn
+respawn limit 99 5
+
+script
+    # Not sure why $HOME is needed, but we found that it is:
+    export HOME="/root"
+    export NODE_ENV="<%= @node_env %>"
+
+    chdir <%= @source_dir %>
+    exec /usr/local/bin/node <%= @source_dir %>/lib/service.js
+end script
+
+post-start script
+   # Optionally put a script here that will notifiy you node has (re)started
+   # /root/bin/hoptoad.sh "node.js has started!"
+end script
