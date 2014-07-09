@@ -1,19 +1,6 @@
 {
 	"mongodb": {
-		"host": "localhost",
-		"port": 3001,
 		"db": "metrics",
-		"replicaset":"107.21.170.191:3000,54.196.47.226:3001,23.22.191.19:3003"
-	},
-	"enableBackentry": true,
-	"drugSafetyWindowDays": 3,
-	"drugAlertWindowDays": 3,
-	"dispensedHistoryDays": 90,
-	"him": {
-		"host": "localhost",
-		"port": 5001,
-		"user": "test",
-		"password": "test"
-	},
-	"alertsPath": "alerting/service/alerts"
+		"replicaset":""
+	}
 }
