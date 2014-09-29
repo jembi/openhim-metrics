@@ -1,6 +1,6 @@
 {
 	"mongodb": {
 		"db": "metrics",
-		"replicaset":""
+		"replicaset":"localhost"
 	}
 }
